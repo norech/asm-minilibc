@@ -5,6 +5,7 @@ SRC = 	strlen.s \
 		memcpy.s \
 		strcmp.s \
 		memmove.s \
+		strncmp.s \
 
 TESTS = tests/strlen.c \
 		tests/strchr.c \
@@ -13,6 +14,7 @@ TESTS = tests/strlen.c \
 		tests/memcpy.c \
 		tests/strcmp.c \
 		tests/memmove.c \
+		tests/strncmp.c \
 
 TARGET = minilibc.so
 
