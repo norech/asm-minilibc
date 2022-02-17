@@ -12,11 +12,12 @@ int main()
 
     my_memset(s1, 'a', 10);
     memset(s2, 'a', 10);
-    assert(strncmp(s1, s2, 11));
+    printf("'%s' == '%s'\n", s1, s2);
+    assert(strncmp(s1, s2, 11) == 0);
 
     my_memset(s1, 'a', 15);
     memset(s2, 'a', 15);
-    assert(strncmp(s1, s2, 16));
+    assert(strncmp(s1, s2, 16) == 0);
 
     printf("memset: OK\n");
     dlclose(dl);
