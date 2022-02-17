@@ -1,14 +1,14 @@
-## makefile du pauvre
-
 SRC = 	strlen.s \
 		strchr.s \
 		strrchr.s \
-		memset.s
+		memset.s \
+		memcpy.s \
 
 TESTS = tests/strlen.c \
 		tests/strchr.c \
 		tests/strrchr.c \
-		tests/memset.c
+		tests/memset.c \
+		tests/memcpy.c \
 
 TARGET = minilibc.so
 
