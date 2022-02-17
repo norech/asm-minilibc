@@ -9,21 +9,27 @@ section .text
 
 __my_memmove:
 memmove:
+    cmp rdi, rsi
+    jnl bwd
+fwd:
     mov rcx, 0
-looppush:
+loopfwd:
     cmp rcx, rdx
-    jnl looppop
+    jnl end
     mov r10b, byte [rsi + rcx]
-    push r10
+    mov byte [rdi + rcx], r10b
     inc rcx
-    jmp looppush
-looppop:
-    pop r10
+    jmp loopfwd
+bwd:
+    mov rcx, rdx
     dec rcx
+loopbwd:
+    mov r10b, byte [rsi + rcx]
     mov byte [rdi + rcx], r10b
     cmp rcx, 0
     je end
-    jmp looppop
+    dec rcx
+    jmp loopbwd
 end:
     mov rax, rdi
     ret

@@ -12,6 +12,7 @@ int main()
 
     my_memmove(s1, "hello", 6);
     memmove(s2, "hello", 6);
+    printf("'%s' == '%s'\n", s1, s2);
     assert(strncmp(s1, s2, 6) == 0);
 
     my_memmove(s1, "azertyuiop", 3);
@@ -22,7 +23,6 @@ int main()
     memmove(s2 + 1, s2 + 2, 3);
     assert(strncmp(s1, s2, 4) == 0);
 
-    printf("'%s' == '%s'\n", s1, s2);
 
     printf("memmove: OK\n");
     dlclose(dl);
