@@ -30,8 +30,8 @@ end:
     mov rax, 0
     ret
 different:
-    mov r10b, byte [rsi + rcx]
-    mov r11b, byte [rdi + rcx]
+    mov r10b, [rsi + rcx]
+    mov r11b, [rdi + rcx]
     sub r11, r10
     mov rax, r11
     ret
