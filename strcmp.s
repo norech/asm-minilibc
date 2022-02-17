@@ -11,7 +11,7 @@ __my_strcmp:
 strcmp:
     mov rcx, 0
     mov r10, 0
-    mov r11, 0
+    mov rax, 0
 loop:
     cmp byte [rdi + rcx], 0
     je end
@@ -27,11 +27,9 @@ end:
     jne different
     cmp byte [rdi + rcx], 0
     jne different
-    mov rax, 0
     ret
 different:
     mov r10b, [rsi + rcx]
-    mov r11b, [rdi + rcx]
-    sub r11, r10
-    mov rax, r11
+    mov al, [rdi + rcx]
+    sub rax, r10
     ret
