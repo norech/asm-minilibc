@@ -5,7 +5,7 @@
 
 int main()
 {
-    void *dl = dlopen("./minilibc.so", RTLD_LAZY);
+    void *dl = dlopen("./libasm.so", RTLD_LAZY);
     char *(*my_memcpy)(char *, const char *, int) = dlsym(dl, "memcpy");
     char s1[100] = {0};
     char s2[100] = {0};

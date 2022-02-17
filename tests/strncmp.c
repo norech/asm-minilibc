@@ -5,7 +5,7 @@
 
 int main()
 {
-    void *dl = dlopen("./minilibc.so", RTLD_LAZY);
+    void *dl = dlopen("./libasm.so", RTLD_LAZY);
     int (*my_strncmp)(const char *, const char *, int) = dlsym(dl, "strncmp");
     const char *s1;
     const char *s2;

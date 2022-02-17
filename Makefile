@@ -16,7 +16,7 @@ TESTS = tests/strlen.c \
 		tests/memmove.c \
 		tests/strncmp.c \
 
-TARGET = minilibc.so
+TARGET = libasm.so
 
 OBJ = $(SRC:%.s=%.o)
 
@@ -24,11 +24,14 @@ TESTS_OUT = $(TESTS:%.c=%.test)
 
 build: $(TARGET)
 
-clean:
+fclean: clean
 	rm -f *.o *.gc*
 	rm -f tests/*.test
 
-re: clean build
+clean:
+	rm -f $(TARGET)
+
+re: fclean build
 
 $(TARGET): $(OBJ)
 	gcc -fPIC -shared -o $@ $^

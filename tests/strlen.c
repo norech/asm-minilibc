@@ -4,7 +4,7 @@
 
 int main()
 {
-    void *dl = dlopen("./minilibc.so", RTLD_LAZY);
+    void *dl = dlopen("./libasm.so", RTLD_LAZY);
     size_t (*strlen)(const char *) = dlsym(dl, "strlen");
     assert(strlen("Hello") == 5);
     assert(strlen("Hi") == 2);
