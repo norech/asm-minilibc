@@ -3,12 +3,14 @@ SRC = 	strlen.s \
 		strrchr.s \
 		memset.s \
 		memcpy.s \
+		strcmp.s \
 
 TESTS = tests/strlen.c \
 		tests/strchr.c \
 		tests/strrchr.c \
 		tests/memset.c \
 		tests/memcpy.c \
+		tests/strcmp.c \
 
 TARGET = minilibc.so
 
