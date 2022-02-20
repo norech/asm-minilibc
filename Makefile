@@ -6,6 +6,7 @@ SRC = 	strlen.s \
 		strcmp.s \
 		memmove.s \
 		strncmp.s \
+		strcasecmp.s \
 
 TESTS = tests/strlen.c \
 		tests/strchr.c \
@@ -15,6 +16,7 @@ TESTS = tests/strlen.c \
 		tests/strcmp.c \
 		tests/memmove.c \
 		tests/strncmp.c \
+		tests/strcasecmp.c \
 
 TARGET = libasm.so
 
@@ -22,7 +24,9 @@ OBJ = $(SRC:%.s=%.o)
 
 TESTS_OUT = $(TESTS:%.c=%.test)
 
-build: $(TARGET)
+all: $(TARGET)
+
+build: all
 
 fclean: clean
 	rm -f *.o *.gc*
