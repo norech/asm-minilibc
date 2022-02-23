@@ -38,7 +38,7 @@ clean:
 re: fclean build
 
 $(TARGET): $(OBJ)
-	gcc -fPIC -shared -o $@ $^
+	ld -fPIC -shared -o $@ $^
 
 %.o: %.s
 	nasm -felf64 -o $@ $<
