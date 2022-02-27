@@ -7,6 +7,7 @@ SRC = 	strlen.s \
 		memmove.s \
 		strncmp.s \
 		strcasecmp.s \
+		strstr.s \
 
 TESTS = tests/strlen.c \
 		tests/strchr.c \
