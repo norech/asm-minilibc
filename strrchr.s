@@ -2,7 +2,7 @@ bits 64
 global strrchr
 global __my_strrchr
 
-extern strchr
+extern strlen
 
 section .text
 
@@ -10,15 +10,19 @@ section .text
 
 __my_strrchr:
 strrchr:
-    mov rax, 0
+    call strlen WRT ..plt
+    mov rcx, rax
 loop:
-    mov r10, rax
-    call strchr WRT ..plt
-    cmp rax, 0
-    je end
-    mov rdi, rax
-    inc rdi
+    cmp byte [rdi + rcx], sil
+    je found
+    cmp byte [rdi + rcx], 0
+    je notfound
+    dec rcx
     jmp loop
-end:
-    mov rax, r10
+notfound:
+    mov rax, 0
+    ret
+found:
+    mov rax, rdi
+    add rax, rcx
     ret

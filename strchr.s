@@ -11,10 +11,10 @@ __my_strchr:
 strchr:
     mov rcx, 0
 loop:
-    cmp byte [rdi + rcx], 0
-    je notfound
     cmp byte [rdi + rcx], sil
     je found
+    cmp byte [rdi + rcx], 0
+    je notfound
     inc rcx
     jmp loop
 notfound:
