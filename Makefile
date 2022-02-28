@@ -8,6 +8,8 @@ SRC = 	strlen.s \
 		strncmp.s \
 		strcasecmp.s \
 		strstr.s \
+		strpbrk.s \
+		strcspn.s \
 
 TESTS = tests/strlen.c \
 		tests/strchr.c \
