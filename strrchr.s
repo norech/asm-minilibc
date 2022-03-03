@@ -10,12 +10,14 @@ section .text
 
 __my_strrchr:
 strrchr:
+    mov rax, 0
     call strlen WRT ..plt
     mov rcx, rax
+    mov rax, 0
 loop:
     cmp byte [rdi + rcx], sil
     je found
-    cmp byte [rdi + rcx], 0
+    cmp rcx, 0
     je notfound
     dec rcx
     jmp loop
