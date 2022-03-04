@@ -21,12 +21,11 @@ loopfwd:
     inc rcx
     jmp loopfwd
 bwd:
-    dec rdx
 loopbwd:
-    mov r10b, byte [rsi + rdx]
-    mov byte [rdi + rdx], r10b
     cmp rdx, 0
     je end
+    mov r10b, byte [rsi + rdx - 1]
+    mov byte [rdi + rdx - 1], r10b
     dec rdx
     jmp loopbwd
 end:
